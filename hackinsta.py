@@ -104,16 +104,6 @@ class Instabrute():
 			else:
 				print (r.text)
 
-#find proxy
-async def proxything(proxies):
-	while True:
-		proxy = await proxies.get()
-		if proxy is None: break
-		print('[*] Found proxy: %s' % proxy)
-		socks.set_default_proxy(socks.HTTP, proxy.host, proxy.port)
-		socket.socket = socks.socksocket
-proxies = asyncio.Queue()
-asyncio.get_event_loop().run_until_complete(asyncio.gather(Broker(proxies).find(types=['HTTPS', 'HTTP'], limit=1), proxything(proxies)))
 
 #main action
 with codecs.open(args.passwords_file, 'r', 'utf-8') as file:
