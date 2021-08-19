@@ -27,14 +27,6 @@ def cleanList(items):
 
 #main class - Instagram bruteforce
 class Instabrute():
-	def __init__(self, username, passwords):
-		self.username = username
-		if not self.userExists():
-			exit('[*] Can\'t find user named "%s"' % self.username)
-
-		self.passwords = passwords
-
-		self.attempts = 0 
 
 	def userExists(self):
 		r = requests.get('https://www.instagram.com/%s/?__a=1' % self.username) 
