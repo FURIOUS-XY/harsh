@@ -6,7 +6,6 @@ import codecs
 import socket
 import socks
 
-from proxybroker import Broker
 
 #args parser
 parser = argparse.ArgumentParser()
